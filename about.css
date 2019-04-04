@@ -1,0 +1,393 @@
+html, body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+.wrapper{
+  flex: 1 0 auto;
+}
+.footer{
+  margin-top: 500px;
+  padding: 10px;
+  padding-top: 20px;
+  flex-shrink: 0;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  height: 30px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 3px 3px 3px 3px #DFDFDF;
+  margin-left: -10px;
+  text-align: center;
+}
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;
+  margin-top: 150px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+/*@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}*/
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+
+
+.bluecube:hover #myImg1, .yellowcube:hover #myImg2, .redcube:hover #myImg3, .pinkcube:hover #myImg4, .greencube:hover #myImg5, .purplecube:hover #myImg6{
+  opacity: 0.2;
+}
+
+.bluecube:hover .hovertext1, .yellowcube:hover .hovertext2, .redcube:hover .hovertext3, .pinkcube:hover .hovertext4, .greencube:hover .hovertext5, .purplecube:hover .hovertext6{
+  opacity: 1;
+}
+
+
+
+
+/*Styling nav bar*/
+.header {
+  padding: 10px 16px;
+  margin-left: -10px;
+  background: #555;
+  color: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
+}
+.nav{
+  margin-left: 30%;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  z-index:1;
+  width: 100%;
+  top: 0;
+  height: 100px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 3px 3px 3px 3px #DFDFDF;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  padding-top: 50px;
+  text-decoration: none;
+}
+#star_of_david{
+  font-size: 70px;
+  margin-top: -40px;
+}
+#project{
+  /*margin-left: 10px;*/
+  margin-right: 10px;
+}
+#contact{
+
+}
+#homeicon{
+  margin-top: -20px;
+}
+#homeicon:hover{
+  opacity: 0.5;
+  color: black;
+}
+#logo{
+  margin-top: -50px;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin-left: 200px;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 530px;
+}
+/* Caption of Modal Image */
+#caption2, #caption3, #caption4, #caption5, #caption6{
+  margin: 50px;
+  display: block;
+  width: 35%;
+  max-width: 500px;
+  text-align: justify;
+  line-height: 25px;
+  color: #ccc;
+  padding: 30px 0;
+  height: 150px;
+  /*position: fixed;*/
+}
+/*#caption {
+  margin: 50px;
+  width: 30%;
+  max-width: 100%;
+}*/
+#img01{
+  width: 700px;
+  height: 500px;
+}
+#caption2, #caption3, #caption4, #caption5, #caption6, .modal-content{
+  display: inline-block;
+}
+/*.text {
+  display: none;
+}*/
+
+/* Add Animation */
+.modal-content, #caption, #caption2, #caption3, #caption4, #caption5, #caption6{  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close, .close2, .close3, .close4, .close5, .close6{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus, .close2:hover, .close2:focus, .close3:hover, .close3:focus, .close4:hover, .close4:focus, .close5:hover, .close5:focus, .close6:hover, .close6:focus{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* reference: http://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+ /* Can also try: https://codepen.io/mxttsco/pen/KgodYm*/
+.nav a{
+  position: relative;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.nav a:hover{
+  color: #000;
+}
+.nav a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #99CCCC;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.nav a:hover:before{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+
+/* reference: https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load*/
+.topdiv img {
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+/*About Me CSS starts from here*/
+#aboutme{
+  /*margin: 100px;*/
+  /*margin-top: 200px;*/
+  margin-left: 80px;
+}
+.topdiv-1{
+  display: inline-block;
+  width: 600px;
+  height: 750px;
+  float: left;
+  margin-top: 200px;
+  margin-left: 60px;
+  line-height: 35px;
+  text-align: justify;
+}
+.middiv{
+  display: inline-block;
+  width: 600px;
+  height: 750px;
+  float: left;
+  margin-top: 50px;
+  margin-left: 100px;
+  line-height: 35px;
+  text-align: justify;
+  position: relative;
+  padding-bottom: 100px;
+}
+.bottomdiv{
+  display: inline-block;
+  float: left;
+  position: absolute;
+  /*height: 750px;*/
+  /*margin-left: 140px;*/
+  margin-top: 80px;
+  width: 1200px;
+}
+h3{
+  padding-bottom: 20px;
+  font-size: 40px;
+  color: #003366;
+}
+.firstL{
+  font-size: 70px;
+  line-height: 70px;
+  float: left;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+.year{
+  font-size: 35px;
+  color: #99CCCC;
+  font-weight: bold;
+}
+
+
+
+
