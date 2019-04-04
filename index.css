@@ -1,0 +1,224 @@
+body{
+	overflow-x: hidden;
+	/*background-image: url("image/bg.png");
+	background-repeat: no-repeat;*/
+}
+/*.bluecube{
+	grid-area: blueblock;
+	justify-self: center;
+}
+.yellowcube{
+	grid-area: yellowblock;
+	justify-self: center;
+}
+.redcube{
+	grid-area: redblock;
+	justify-self: center;
+}
+.pinkcube{
+	grid-area: pinkblock;
+	justify-self: center;
+	align-self: center;
+}*/
+
+
+/*Creating a grid for the blocks*/
+.meimages{
+	display: grid; 
+	grid-template-columns: 330px 330px; 
+	grid-template-rows: 400px 400px; 
+	grid-auto-flow: row;
+	grid-column-gap: 50px; 
+	grid-row-gap: 0px;
+	/*grid-template-areas: "blueblock yellowblock"
+						"redblock pinkblock"*/
+}
+
+
+/*style the grid*/
+.meimages{
+	width: 670px;
+	height: 800px;
+	/*width: 45%;*/
+	/*position: relative;*/
+	margin-left: 171px;
+	/*padding-left: 50px;*/
+	/*left: 18%;*/
+	/*padding-bottom: 10px;*/
+}
+
+.item1{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	width: 50%;
+}
+.item2{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	width: 50%;
+}
+.item3{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	width: 50%;
+}
+.item4{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	width: 50%;
+}
+
+/*.leftside{
+	margin: auto;
+}*/
+.divone{
+	/*width: 700px;*/
+	/*width: 45%;*/
+	float: left;
+}
+.divone, .meimages{
+	display: inline-block;
+}
+
+
+/*.leftside, .meimages{
+	display: inline-block;
+}*/
+/* reference: https://medium.freecodecamp.org/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431*/
+.meimages div{
+	/*display: block;*/
+	/*width: 25%;*/
+	float: right;
+	margin-left: 0px;
+	margin-right: -25px;
+	/*object-fit: cover;*/
+	/*clear: both;*/
+}
+/*.title, .meimages{
+	display: inline-block;
+}*/
+.bg{
+	width: 500px;
+	margin-left: 10px;
+}
+.title{
+	width: 510px;
+	margin-top: -350px;
+	margin-left: 20px;
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+}
+#sub{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	margin-top: -50px;
+}
+#quote{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+}
+.menu{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	margin-top: 150px;
+}
+
+ /* reference: http://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+ /* Can also try: https://codepen.io/mxttsco/pen/KgodYm*/
+a{
+	position: relative;
+  	color: #000;
+  	text-decoration: none;
+  	padding-bottom: 10px;
+}
+a:hover{
+	color: #000;
+}
+a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #99CCCC;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+a:hover:before{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+
+/* reference: https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load*/
+.meimages img {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.title {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 2s ease-out 0s 1 slideInFromTop;
+  
+  /*background: white;*/
+  padding: 20px;
+}
